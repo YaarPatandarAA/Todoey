@@ -21,7 +21,7 @@ class CategoryViewController: SwipeTableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loadItems()
-        
+        tableView.separatorStyle = .none
         tableView.rowHeight = 80.0
     }
     
@@ -35,7 +35,9 @@ class CategoryViewController: SwipeTableViewController {
         
         cell.textLabel?.text = categories?[indexPath.row].name ?? "No Categories Added Yet"
         
-        cell.backgroundColor = UIColor.randomFlat
+        guard let catColor = UIColor(hexString: (categories?[indexPath.row].color)!) else {fatalError()}
+        cell.backgroundColor = catColor
+        cell.textLabel?.textColor = ContrastColorOf(catColor, returnFlat: true)
         
         return cell
     }
@@ -103,6 +105,7 @@ class CategoryViewController: SwipeTableViewController {
             let newItem = Category()
             
             newItem.name = textField.text!
+            newItem.color = UIColor.randomFlat.hexValue()
             
             self.saveData(category: newItem)
         }
