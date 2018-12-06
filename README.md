@@ -7,7 +7,7 @@ Create a note taking app that is simple and user friendly. Using concepts learne
 Todoey is a simple list based todo list app. Using persistent data to keep lists in store and using relationships to link categories with items. Use different types of persistent data models to store data even after app is terminated. Finally make app aesthetically pleasing for the optimal user experience.
 
 ## Finished App
-![FinishedApp]()
+<img src="AppTest.gif" alt="Finished App" width="40%">
 
 ## What is learned
 
